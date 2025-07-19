@@ -4,37 +4,53 @@
             class="bg-white rounded-3 border px-3 py-5 d-flex flex-column gap-3">
             <div class="text-center">
                 <div class="pb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bluesky text-warning" viewBox="0 0 16 16">
-                        <path d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"/>
-                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                        class="bi bi-bluesky text-warning" viewBox="0 0 16 16">
+                        <path
+                            d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948" />
+                    </svg>
                 </div>
                 <h4 class="mb-0">Welcome back</h4>
                 <span class="text-secondary small">Please enter your credentials to continue</span>
             </div>
 
             <div>
-                <div class="d-flex align-items-center rounded-2 border px-2" [ngClass]="{'border-danger':loginForm.get('username')?.invalid}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" [ngClass]="{'text-danger':loginForm.get('username')?.invalid}" viewBox="0 0 16 16">
-                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                      </svg>
-                    <input type="text" class="form-control border-0 shadow-none" placeholder="Username" type="text" formControlName="username">
+                <div class="d-flex align-items-center rounded-2 border px-2"
+                    [ngClass]="{'border-danger':loginForm.get('username')?.invalid}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-person" [ngClass]="{'text-danger':loginForm.get('username')?.invalid}"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                    </svg>
+                    <input type="text" class="form-control border-0 shadow-none" placeholder="Username" type="text"
+                        formControlName="username">
                 </div>
                 @if (loginForm.get('username')?.invalid) {
                 <span class="small text-danger mt">Please enter a valid username</span>
                 }
             </div>
             <div>
-                <div class="d-flex align-items-center rounded-2 border px-2" [ngClass]="{'border-danger':loginForm.get('password')?.invalid}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-key" [ngClass]="{'text-danger':loginForm.get('password')?.invalid}" viewBox="0 0 16 16">
-                        <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/>
-                        <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                      </svg>
-                    <input type="text" class="form-control border-0 shadow-none" placeholder="Password" type="password" formControlName="password">
+                <div class="d-flex align-items-center rounded-2 border px-2"
+                    [ngClass]="{'border-danger':loginForm.get('password')?.invalid}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-key"
+                        [ngClass]="{'text-danger':loginForm.get('password')?.invalid}" viewBox="0 0 16 16">
+                        <path
+                            d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5" />
+                        <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                    </svg>
+                    <input type="text" class="form-control border-0 shadow-none" placeholder="Password" type="password"
+                        formControlName="password">
                 </div>
                 @if (loginForm.get('password')?.invalid) {
                 <span class="small text-danger mt-1">Please enter a valid password</span>
                 }
             </div>
+            @if (loginError) {
+                <div>
+                    <span class="small text-danger mt-1">{{loginError}}</span>
+                </div>
+            }
             <button class="btn btn-warning w-100" type="submit" [disabled]="loginForm.invalid">Login</button>
             <button class="btn bg-secondary-subtle w-100" type="button">Reset</button>
         </form>

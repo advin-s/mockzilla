@@ -1,15 +1,15 @@
-export type LoginState = LoggingInState | LoginSuccess | LoginFailed
+import { AuthData } from "./interfaces"
 
-type LoggingInState = {
-    isLoading:boolean
-}
-
-type LoginSuccess = {
-    data:Record<string,string | number>
+export type LoginState = {
     isLoading:boolean,
+    data:AuthData | null,
+    errorMessage:loginError | null
 }
 
-type LoginFailed = {
+export type loginError = {
+    message:string
+}
+export type LoginFailed = {
     errorMessage:Record<string,string | number>
     isLoading:boolean,
 }
