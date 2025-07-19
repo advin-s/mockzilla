@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { login } from '../store/auth/auth.actions';
+import { login, logout } from '../store/auth/auth.actions';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     // this.store$.dispatch(login({loginData:{username:'emilys', password:'emilyspas'}}))
     // this.authService.onLogin({username:'emilys', password:'emilyspass'}).subscribe((res:any) => console.log(res)
     // )
+    this.store$.dispatch(logout())
   }
 
 }
