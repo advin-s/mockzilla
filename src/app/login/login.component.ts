@@ -12,6 +12,7 @@ import { AsyncPipe, NgClass } from '@angular/common';
 import { distinctUntilChanged, Observable } from 'rxjs';
 import { isLogginIn, loginError } from '../store/auth/auth.selectors';
 import { AppStateInterface } from '../types';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   imports: [ReactiveFormsModule, NgClass],
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
   isLoading$!: Observable<boolean>;
   loginError!: any | null;
 
-  constructor(private store$: Store<AppStateInterface>,private authService:AuthService) {}
+  constructor(private store$: Store<AppStateInterface>,private authService:AuthService, private router:Router) {}
 
   ngOnInit(): void {
     this.authService.autoLogin()
@@ -51,5 +52,6 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.invalid) return;
     this.store$.dispatch(login({ loginData: this.loginForm.value }));
+    this.router.navigate(['dashboard'])
   }
 }

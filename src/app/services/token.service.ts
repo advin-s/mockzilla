@@ -26,6 +26,7 @@ export class TokenService {
 
   clearToken() {
     localStorage.removeItem('accessToken');
+    localStorage.removeItem('tokenExpiry');
   }
 
   setTokenExpiry() {
@@ -37,6 +38,7 @@ export class TokenService {
 
   checkTokenExpiry(): boolean {
     const expiry = +JSON.stringify(localStorage.getItem('tokenExpiry'));
+    if(!expiry) return true
     const currentTime = new Date().getTime();
     return currentTime > expiry;
   }

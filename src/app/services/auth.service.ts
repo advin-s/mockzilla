@@ -26,4 +26,9 @@ export class AuthService {
       this.router.navigate(['dashboard'])
     }
   }
+
+  onLogout(){
+    this.tokenService.clearToken()
+    this.router.navigate([''])
+  }
 }
