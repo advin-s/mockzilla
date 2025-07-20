@@ -13,7 +13,8 @@ export class TokenService {
   setToken(token: Token) {
     const { accessToken } = token;
     this.userToken.next(accessToken);
-    localStorage.setItem(accessToken, 'accessToken');
+    localStorage.setItem('accessToken', accessToken);
+    this.setTokenExpiry();
   }
 
   fetchToken() {
@@ -25,5 +26,18 @@ export class TokenService {
 
   clearToken() {
     localStorage.removeItem('accessToken');
+  }
+
+  setTokenExpiry() {
+    const currentTime = new Date().getTime();
+    const oneHourMs = 60 * 60 * 1000;
+    const tokenExpiry = currentTime + oneHourMs;
+    localStorage.setItem('tokenExpiry', JSON.stringify(tokenExpiry));
+  }
+
+  checkTokenExpiry(): boolean {
+    const expiry = +JSON.stringify(localStorage.getItem('tokenExpiry'));
+    const currentTime = new Date().getTime();
+    return currentTime > expiry;
   }
 }
