@@ -23,9 +23,10 @@ export class LoginComponent implements OnInit {
   isLoading$!: Observable<boolean>;
   loginError!: any | null;
 
-  constructor(private store$: Store<AppStateInterface>) {}
+  constructor(private store$: Store<AppStateInterface>,private authService:AuthService) {}
 
   ngOnInit(): void {
+    this.authService.autoLogin()
     this.loginForm = new FormGroup({
       username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required]),

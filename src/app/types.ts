@@ -23,3 +23,6 @@ export type LoginData = {
     password:string | undefined
 }
 
+export type Token = {
+    accessToken:string
+}
