@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
   constructor(private tokenService:TokenService){}
 
   ngOnInit(): void {
-    this.tokenService.fetchToken()
+    if(this.tokenService.isTokenExpired()){
+      this.tokenService.fetchToken()
+    }
   }
 }

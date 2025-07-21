@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   autoLogin(){
-    if(!this.tokenService.checkTokenExpiry()){
+    if(!this.tokenService.isTokenExpired()){
       this.router.navigate(['dashboard'])
     }
   }

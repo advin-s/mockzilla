@@ -36,10 +36,10 @@ export class TokenService {
     localStorage.setItem('tokenExpiry', JSON.stringify(tokenExpiry));
   }
 
-  checkTokenExpiry(): boolean {
+  isTokenExpired(): boolean {
     const expiry = +JSON.stringify(localStorage.getItem('tokenExpiry'));
     if(!expiry) return true
     const currentTime = new Date().getTime();
-    return currentTime > expiry;
+    return expiry > currentTime;
   }
 }
