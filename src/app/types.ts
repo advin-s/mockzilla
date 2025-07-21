@@ -26,3 +26,8 @@ export type LoginData = {
 export type Token = {
     accessToken:string
 }
+
+export type ToastMessage = {
+    heading:string | undefined,
+    message:string | undefined
+}
