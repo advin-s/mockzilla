@@ -1,1 +1,66 @@
-<p>products works!</p>
+<div class="container-fluid">
+    <!-- header -->
+    <div class="d-flex align-items-center justify-content-between">
+        <div>
+            <h3 class="mb-0">
+                Products overview
+            </h3>
+            <span class="text-secondary">
+                Manage your products inventroy
+            </span>
+        </div>
+        <div class="d-inline-flex align-items-center gap-3">
+            <button class="btn btn-warning">
+                Add product
+            </button>
+            <button class="btn bg-warning-subtle">
+                Export
+            </button>
+        </div>
+    </div>
+
+    <!-- search and filter -->
+    <div class="row align-items-center justify-content-between my-3">
+        <div class="col-12 col-md-4 col-lg-3">
+            <input type="text" class="form-control" placeholder="Search products">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="d-flex align-items-center justify-content-end gap-3">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="text-secondary">Category</span>
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                            All Category
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem>Action - 1</button>
+                            <button ngbDropdownItem>Another Action</button>
+                            <button ngbDropdownItem>Something else is here</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="text-secondary">Category</span>
+                    <div ngbDropdown class="d-inline-block">
+                        <button type="button" class="btn btn-outline-secondary" id="dropdownBasic2" ngbDropdownToggle>
+                            Sort by
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                            <button ngbDropdownItem>Action - 1</button>
+                            <button ngbDropdownItem>Another Action</button>
+                            <button ngbDropdownItem>Something else is here</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline-flex align-items-center gap-3">
+                    <button class="btn p-0 border-0 d-flex">
+                        <i class="bi bi-grid-3x2-gap-fill h3 mb-0 mt-1"></i>
+                    </button>
+                    <button class="btn p-0 border-0">
+                        <i class="bi bi-list h3 mb-0 mt-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
