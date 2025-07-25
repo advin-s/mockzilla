@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { authGuard } from './auth/auth.guard';
+import { HomeComponent } from './dashboard/home/home.component';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,11 @@ export const routes: Routes = [
       ),
     title: 'Welcome to mockzilla dashboard',
     children: [
+      {
+        path:'',
+        loadComponent:() => import('./dashboard/home/home.component').then(c => HomeComponent),
+        title:'Dashboard home'
+      },
       {
         path: 'products',
         loadComponent: () =>

@@ -31,3 +31,10 @@ export type ToastMessage = {
     heading:string | undefined,
     message:string | undefined
 }
+
+export type DashboardMenuItem = {
+    name:string,
+    count: number,
+    redirectUrl: string,
+    imgSrc:string
+}

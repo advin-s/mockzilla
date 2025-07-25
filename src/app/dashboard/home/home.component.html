@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <div class="row">
+       @for (item of menuItems; track $index) {
+        <app-feature-card [item]="item"/>
+       }
+    </div>
+</div>
