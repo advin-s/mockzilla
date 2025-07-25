@@ -2,7 +2,7 @@
 <div class="p-3 bg-secondary-subtle rounded-3 shadow">
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h5 class="mb-0">{{item().name}}</h5>
-        <p class="mb-0">{{item().name}}</p>
+        <p class="mb-0">{{item().count}}</p>
     </div>
     <img [src]="item().imgSrc" [alt]="item().name" class="w-100 h-300px mb-3">
     <button class="btn btn-info w-100" [routerLink]="item().redirectUrl">
