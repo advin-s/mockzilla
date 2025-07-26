@@ -20,7 +20,7 @@
     </div>
 
     <!-- search and filter -->
-    <div class="row align-items-center justify-content-between my-3">
+    <div class="row align-items-center justify-content-between py-3">
         <div class="col-12 col-md-4 col-lg-3">
             <input type="text" class="form-control" placeholder="Search products">
         </div>
@@ -65,7 +65,9 @@
     </div>
 
     <!-- products -->
-    <div class="row">
-
+    <div class="row overflow-y-auto products-container-height position-relative">
+        @for (item of products; track $index) {
+            <app-product-card [product]="item"/>
+        }
     </div>
 </div>

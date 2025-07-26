@@ -1,0 +1,18 @@
+
+<div class="p-3">
+    <img [src]="product().thumbnail" alt="">
+    <div class="d-flex align-items-center justify-content-between my-3">
+        <div>
+            <h5 class="mb-0">{{product().title}}</h5>
+            <span class="small text-secondary">{{product().category}}</span>
+        </div>
+        <span class="text-info fw-bold">{{product().price}}</span>
+    </div>
+    <p class="mb-0 text-secondary small">{{product().description}}</p>
+    <div class="d-flex align-items-center gap-2">
+        <ngb-rating class="text-warning fs-5" [rate]="product().rating"/>
+        <span class="small text-secondary">
+            ({{product().reviews.length}})
+        </span>
+    </div>
+</div>
