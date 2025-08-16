@@ -3,6 +3,9 @@ import {
   getProducts,
   getProductsError,
   getProductsSuccess,
+  searchProducts,
+  searchProductsError,
+  searchProductsSuccess,
 } from './product.actions';
 import { ProductState } from '../../types';
 
@@ -23,6 +26,17 @@ export const productReducer = createReducer(
     isLoading: false,
   })),
   on(getProductsError, (state, action) => ({
+    ...state,
+    isLoading: false,
+    error: action,
+  })),
+  on(searchProducts, (state) => ({ ...state, isLoading: true })),
+  on(searchProductsSuccess, (state, { products }) => ({
+    ...state,
+    isLoading: false,
+    products: [...new Set([...state.products, ...products])],
+  })),
+  on(searchProductsError, (state, action) => ({
     ...state,
     isLoading: false,
     error: action,
